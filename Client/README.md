@@ -1,7 +1,8 @@
 # NOTE !!!
+
 // MANUALLY OVERRIDE ESBUILD VERSION TO 0.25.0 to ADDRESS SECURITY VULNERABILITES ON 0.24.2
 // I READ THE DISCUSSION DOCS ON GITHUB AND THE CONTRIBUTORS SAID THAT YOU'RE GOOD TO OVERRIDE IT
-// LINK - 1) https://github.com/vitejs/vite/pull/19389     2) https://github.com/louischan-oursky/authgear-server/commit/0a9068e065fa9dce80f489fe794bd1db37d2b93d
+// LINK - 1) https://github.com/vitejs/vite/pull/19389 2) https://github.com/louischan-oursky/authgear-server/commit/0a9068e065fa9dce80f489fe794bd1db37d2b93d
 // REMOVE THIS LINE WHEN THEY UPDATE THE PACKAGES
 
 # React + TypeScript + Vite
@@ -24,11 +25,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -37,11 +38,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -50,7 +51,7 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
