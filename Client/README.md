@@ -1,3 +1,9 @@
+# NOTE !!!
+// MANUALLY OVERRIDE ESBUILD VERSION TO 0.25.0 to ADDRESS SECURITY VULNERABILITES ON 0.24.2
+// I READ THE DISCUSSION DOCS ON GITHUB AND THE CONTRIBUTORS SAID THAT YOU'RE GOOD TO OVERRIDE IT
+// LINK - 1) https://github.com/vitejs/vite/pull/19389     2) https://github.com/louischan-oursky/authgear-server/commit/0a9068e065fa9dce80f489fe794bd1db37d2b93d
+// REMOVE THIS LINE WHEN THEY UPDATE THE PACKAGES
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
