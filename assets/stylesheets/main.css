@@ -1,0 +1,403 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+@import "fonts.css";
+
+html {
+  height: 100%;
+}
+
+.title {
+  font-size: xx-large;
+}
+
+.container {
+  width: 70%;
+}
+
+hr {
+  height: 1px;
+  background-color: #F5E79D;
+  border: none;
+}
+
+body {
+  background-color: #f8f8f88d;
+  min-height: 100%;
+  font-size: large;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #4e9b8b; /* Background color */
+  color: white; /* Text color */
+  padding: 10px 0; /* Vertical padding */
+  position: fixed; /* Fix it at the bottom of the page */
+  width: 100%; /* Make it full width */
+  bottom: 0; /* Align at the bottom of the page */
+  left: 0;
+  text-align: center; /* Center align the text */
+  font-size: 14px; /* Set a small font size */
+  z-index: 1000; /* Ensure footer stays on top of other content */
+}
+
+/* Optional: Hover effect for footer */
+.footer:hover {
+  background-color: #357f74; /* Slightly darker background on hover */
+}
+
+
+#peers {
+  display: none;
+  padding-right: 5px;
+}
+
+.mirror {
+  -o-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+video {
+  border-radius: 1%;
+  max-height: 90vh;
+  margin: 10px;
+  background-color: #F5E79D;
+}
+
+.video-options {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.notif {
+  margin-top: 10px;
+  margin-bottom: 150px;
+  justify-content: center;
+  display: grid;
+  align-items: center;
+}
+
+.chat {
+  background-color: #141414;
+  z-index: 99;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  width: 22%;
+}
+
+.chat #msg {
+  border-radius: 0%;
+}
+
+#chat {
+  display: none;
+}
+
+#chat .body {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow-y: scroll;
+  height: 30vh;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  border-radius: 5%;
+  word-wrap: break-word;
+}
+
+.chat .send {
+  width: 100%;
+  position: absolute;
+  height: 20px;
+  bottom: 20px;
+  display: flex;
+}
+
+.chat .send .control-input {
+  width: 100%;
+}
+
+.chat-link {
+  color: #4e9b8b; 
+  cursor: pointer; 
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.chat-link:hover {
+  color: #357f74; 
+  transform: scale(1.05); /* Slightly enlarge the text for a subtle effect */
+}
+
+.chat-link p {
+  text-decoration: none;
+  margin: 0; /* Remove margin from the <p> tag */
+  font-size: 16px; /* Set a custom font size */
+}
+
+
+#chat-content {
+  background-color: #090a0a;
+  display: none;
+}
+
+.peer {
+  display: flex;
+  justify-content: center;
+}
+
+#nocon {
+  display: none;
+}
+
+#noperm,
+#noonestream,
+#nostream {
+  justify-content: center;
+  display: grid;
+  height: 40vh;
+}
+
+.viewer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  justify-content: end;
+}
+
+#chat-alert {
+  display: none;
+  border-radius: 50%;
+  background-color: #f14668;
+  width: 12px;
+  height: 12px;
+  justify-content: end;
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    width: 95%;
+  }
+
+  .chat {
+    width: 100%;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0%;
+  }
+}
+
+@media screen and (min-width: 850px) and (max-width: 1200px) {
+  .container {
+    width: 80%;
+  }
+
+  .chat {
+    width: 40%;
+  }
+
+  .navbar-item {
+    display: flex;
+  }
+
+  .navbar,
+  .navbar-menu,
+  .navbar-start,
+  .navbar-end {
+    align-items: stretch;
+    display: flex;
+    padding: 0;
+  }
+
+  .navbar-menu {
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  .navbar-start {
+    justify-content: flex-start;
+    margin-right: auto;
+  }
+
+  .navbar-end {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .navbar .container {
+    display: flex;
+  }
+
+  .navbar-item {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    width: 70%;
+  }
+
+  .chat {
+    width: 23%;
+  }
+}
+
+.custom-button {
+  background-color: #f4f4f4;  /* Light background */
+  color: #333;  /* Dark text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;  /* Remove underline */
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  border: 1px solid #ddd;  /* Border to define the button better */
+}
+
+.custom-button:hover {
+  background-color: #000;  /* Black background */
+  color: white;  /* White text color */
+  border-color: #000;  /* Optional: Change border color on hover */
+}
+
+/* Default styling for "Leave Room" button */
+.custom-leave-button {
+  background-color: #e74c3c;  /* Default "danger" red background */
+  color: white;  /* White text color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;  /* Remove underline */
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition */
+  border: 1px solid #e74c3c;  /* Border to define button better */
+}
+
+/* Hover effect for "Leave Room" button */
+.custom-leave-button:hover {
+  background-color: #ac83ef;  /* Black background */
+  color: white;  /* White text color */
+  border-color: #000;  /* Change border to black */
+}
+
+
+/*-------------------------------Login--------------------------------*/
+/* Auth Container: Center the .auth-form div in the viewport */
+.auth-container {
+  display: flex;
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically */
+  min-height: 50vh;           /* Full height of the viewport */
+  padding: 0;
+  margin: 0;
+}
+
+/* Auth Form Style */
+.auth-form {
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+    width: 400px;
+    margin: 60px auto;
+  text-align: left;            /* Align text to the left */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading Style */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Form input group styling */
+.input-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;  /* Stack label and input vertically */
+  align-items: flex-start; /* Align label and input to the left */
+}
+
+/* Label styling: Align label text to the top-left */
+.input-group label {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;        /* Add space between label and input */
+  text-align: left;          /* Align text to the left */
+  /*width: 100%; */              /* Make label take the full width */
+}
+
+/* Input fields styling */
+.input-group input {
+  width: 100%;               /* Full width of the parent container */
+  /*max-width: 250px; */         /* Maximum width of the input field */
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+/* Focused input state */
+.input-group input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Button styling */
+button.btn {
+  width: 100%;
+  /*max-width: 250px;  */          /* Maximum width for the button */
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button.btn:hover {
+  background-color: #070707;
+}
+
+/* Switch between Login and Sign Up links */
+.switch-link {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.switch-link span {
+  color: #4CAF50;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .auth-container {
+    width: 90%;
+    margin: 80px 20px;
+    padding: 20px;
+  }
+}

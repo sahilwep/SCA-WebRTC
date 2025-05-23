@@ -1,5 +1,7 @@
-# SCA-WebRTC
+# Video Call Project
 
-WebRTC Project
+## Run the code: 
 
-https://webrtc.org/
+```sh
+$ go run cmd/main.go
+```
